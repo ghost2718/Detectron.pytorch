@@ -17,6 +17,7 @@ FPN:
   MULTILEVEL_ROIS: True
   MULTILEVEL_RPN: True
 RESNETS:
+  IMAGENET_PRETRAINED_WEIGHTS: 'data/pretrained_model/X-101-32x8d.pkl'
   STRIDE_1X1: False  
   TRANS_FUNC: bottleneck_transformation
   NUM_GROUPS: 32
