@@ -195,6 +195,7 @@ def add_bbox_regression_targets(roidb):
 def _compute_targets(entry):
     """Compute bounding-box regression targets for an image."""
     # Indices of ground-truth ROIs
+    print("The keys in ROIDB are :{}".format(list(entry.keys())))
     rois = entry['boxes']
     overlaps = entry['max_overlaps']
     labels = entry['max_classes']
