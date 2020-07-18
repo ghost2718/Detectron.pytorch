@@ -25,7 +25,7 @@ import os
 from core.config import cfg
 
 # Path to data dir
-# _DATA_DIR = cfg.DATA_DIR
+_DATA_DIR = cfg.DATA_DIR
 
 # Required dataset entry keys
 IM_DIR = 'image_directory'
