@@ -25,7 +25,7 @@ import os
 from core.config import cfg
 
 # Path to data dir
-_DATA_DIR = cfg.DATA_DIR
+# _DATA_DIR = cfg.DATA_DIR
 
 # Required dataset entry keys
 IM_DIR = 'image_directory'
@@ -65,9 +65,9 @@ DATASETS = {
     },
     'coco_2014_train': {
         IM_DIR:
-            _DATA_DIR + '/coco/images/train2014',
+            '/content/drive/My Drive/MediTablesIIIT-coco/coco/trainval',
         ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_train2014.json'
+            '/content/drive/My Drive/MediTablesIIIT-coco/coco/annotations/trainval.json'
     },
     'coco_2014_val': {
         IM_DIR:
