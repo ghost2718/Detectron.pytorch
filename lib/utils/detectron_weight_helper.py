@@ -20,6 +20,7 @@ def load_detectron_weight(net, detectron_weight_file):
         print("The D Name is  {}".format(d_name))
         try:
             if isinstance(d_name, str):  # maybe str, None or True
+                print("copied param name is {}".format(d_name))
                 p_tensor.copy_(torch.Tensor(src_blobs[d_name]))
         except:
             pass
