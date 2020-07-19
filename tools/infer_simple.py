@@ -34,9 +34,15 @@ import utils.vis as vis_utils
 from utils.detectron_weight_helper import load_detectron_weight
 from utils.timer import Timer
 
+
+
 # OpenCL may be enabled by default in OpenCV3; disable it because it's not
 # thread safe and causes unwanted GPU memory allocations.
 cv2.ocl.setUseOpenCL(False)
+
+
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 
 def parse_args():
@@ -131,6 +137,7 @@ def main():
                                  minibatch=True, device_ids=[0])  # only support single GPU
 
     maskRCNN.eval()
+    print(count_parameters(maskRCNN))
     if args.image_dir:
         imglist = misc_utils.get_imagelist_from_dir(args.image_dir)
     else:
