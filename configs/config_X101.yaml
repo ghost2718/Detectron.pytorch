@@ -38,6 +38,7 @@ MRCNN:
 TRAIN:
   # WEIGHTS: "/content/model_final.pkl"
   SNAPSHOT_ITERS: 1500
+  FREEZE_CONV_BODY: True
   DATASETS: ('coco_2014_train',)
   SCALES: (500,)
   MAX_SIZE: 833
