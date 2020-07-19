@@ -142,6 +142,8 @@ def main():
     for i in xrange(num_images):
         print('img', i)
         im = cv2.imread(imglist[i])
+        img = np.zeros(list(im.shape),dtype=np.uint8)
+        img.fill(255)
         assert im is not None
 
         timers = defaultdict(Timer)
@@ -150,7 +152,7 @@ def main():
 
         im_name, _ = os.path.splitext(os.path.basename(imglist[i]))
         vis_utils.vis_one_image(
-            im[:, :, ::-1],  # BGR -> RGB for visualization
+            img[:, :, ::-1],  # BGR -> RGB for visualization
             im_name,
             args.output_dir,
             cls_boxes,
